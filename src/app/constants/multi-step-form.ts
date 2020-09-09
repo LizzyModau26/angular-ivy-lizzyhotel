@@ -19,40 +19,61 @@ const DATA_STEP_1 = {
     errors: {},
     placeholder: 'Date of Birth'
   },
-  idNo: { type: 'text', validations: {}, errors: {}, placeholder: 'ID Number' },
+   idNo: {
+    type: 'number',
+    validations: {
+      pattern: /^\d{13}$/
+    },
+    errors: {
+      pattern: 'Please enter a valid ID number'
+    },
+    placeholder: 'ID Number'
+  },
   email: { type: 'text', validations: {}, errors: {}, placeholder: ' Email Address' },
    province: {
     type: 'select',
     options: PROV_LIST,
     validations: {},
     errors: {},
-    placeholder: 'Country'
+    placeholder: 'Province Of Choice'
+  },
+  dateOfArrival: {
+    type: 'date',
+    validations: {},
+    errors: {},
+    placeholder: 'Date of Arrival'
+  },
+  dateOfDeparture: {
+    type: 'date',
+    validations: {},
+    errors: {},
+    placeholder: 'Date of Departure'
   }
 };
 
 
 const DATA_STEP_2 = {
-  phone: {
-    type: 'phone',
+  cardNo: {
+    type: 'number',
     validations: {
-      pattern: /^\d{10}$/
+      pattern: /^\d{13}$/
     },
     errors: {
-      pattern: 'Please enter a valid phone number'
+      pattern: 'Please enter a valid card number'
     },
-    placeholder: 'Contact Number'
+    placeholder: 'Card Number'
   },
-  otp: {
+  cvv: {
     type: 'number',
     validations: {
       required: true,
-      minLength: 4
+      minLength: 3
     },
     errors: {
       required: 'This field can not be left blank',
-      minlength: 'Minimum length should be 4 characters'
+      minlength: 'Minimum length should be 3 numbers'
     },
-    placeholder: 'One Time Password'
+    placeholder: 'CVV Number'
   }
 };
 
