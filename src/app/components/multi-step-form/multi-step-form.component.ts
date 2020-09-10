@@ -24,7 +24,7 @@ export class MultiStepFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // TODO: add interfaces and enums wherever appropriate
+    
 
     this.activeStepIndex = 0;
     this.masterForm = [];
@@ -33,13 +33,13 @@ export class MultiStepFormComponent implements OnInit {
     this.stepItems = this.formContent;
 
     this.stepItems.forEach((data, i) => {
-      this.currentFormContent.push(this.stepItems[i]['data']); // holds name, validators, placeholder of all steps
-      this.formFields.push(Object.keys(this.currentFormContent[i])); // holds string values for each field of all steps
-      this.masterForm.push(this.buildForm(this.currentFormContent[i])); // holds all form groups
+      this.currentFormContent.push(this.stepItems[i]['data']); 
+      this.formFields.push(Object.keys(this.currentFormContent[i])); 
+      this.masterForm.push(this.buildForm(this.currentFormContent[i])); 
     });
   }
 
-  // build separate FormGroups for each form
+  
   buildForm(currentFormContent: any): FormGroup {
     const formDetails = Object.keys(currentFormContent).reduce(
       (obj, key) => {
@@ -53,7 +53,7 @@ export class MultiStepFormComponent implements OnInit {
     return this._formBuilder.group(formDetails);
   }
 
-  // get validator(s) for each field, if any
+  
   getValidators(formField: any): Validators {
     const fieldValidators = Object.keys(formField.validations).map(validator => {
       if (validator === 'required') {
@@ -66,7 +66,7 @@ export class MultiStepFormComponent implements OnInit {
     return fieldValidators;
   }
 
-  // get validation error messages per error, per field
+  
   getValidationMessage(formIndex: number, formFieldName: string): string {
     const formErrors = this.masterForm[formIndex].get(formFieldName).errors;
     const errorMessages = this.currentFormContent[formIndex][formFieldName]

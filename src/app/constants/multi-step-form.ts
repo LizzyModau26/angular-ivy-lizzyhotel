@@ -18,12 +18,40 @@ const ROOM_LIST = [
 
   
 ];
+const CTY_LIST = [
+  { name: 'VISA', code: 'vis' },
+  { name: 'MasterCard', code: 'mas' },
+ 
+];
+
 const OCC_LIST = [
   { name: '1 person', code: '1' },
   { name: '2 people', code: '1' },
   { name: '3 people', code: '1' },
   { name: '4 people', code: '1' },
   { name: '5+ people', code: '1' },
+];
+const MON_LIST = [
+  { name: '01', code: '1' },
+  { name: '02', code: '1' },
+  { name: '03', code: '1' },
+  { name: '04', code: '1' },
+  { name: '05', code: '1' },
+   { name: '06', code: '1' },
+  { name: '07', code: '1' },
+  { name: '08', code: '1' },
+  { name: '09', code: '1' },
+  { name: '10', code: '1' },
+  { name: '11', code: '1' },
+  { name: '12', code: '1' },
+];
+
+const YEAR_LIST = [
+  { name: '2020', code: '20' },
+  { name: '2021', code: '21' },
+  { name: '2022', code: '22' },
+  { name: '2023', code: '23' },
+  { name: '2024', code: '24' },
 ];
 
 const DATA_STEP_1 = {
@@ -83,6 +111,13 @@ const DATA_STEP_1 = {
 
 
 const DATA_STEP_2 = {
+    cardtype: {
+    type: 'select',
+    options: CTY_LIST,
+    validations: {},
+    errors: {},
+    placeholder: 'Card Type Required'
+  },
   cardNo: {
     type: 'number',
     validations: {
@@ -93,6 +128,21 @@ const DATA_STEP_2 = {
     },
     placeholder: 'Card Number'
   },
+    expirymonth: {
+    type: 'select',
+    options: MON_LIST,
+    validations: {},
+    errors: {},
+    placeholder: 'Card Expiry Required'
+  },
+    expiryyear: {
+    type: 'select',
+    options: YEAR_LIST,
+    validations: {},
+    errors: {},
+    placeholder: 'Card Expiry Required'
+  },
+  cardholder: { type: 'text', validations: {}, errors: {}, placeholder: ' Cardd Holders Name' },
   cvv: {
     type: 'number',
     validations: {
@@ -104,8 +154,8 @@ const DATA_STEP_2 = {
       minlength: 'Minimum length should be 3 numbers'
     },
     placeholder: 'CVV Number'
-  },
-  cardholder: { type: 'text', validations: {}, errors: {}, placeholder: ' Cardd Holders Name' }
+  }
+  
 };
 
 const STEP_ITEMS = [

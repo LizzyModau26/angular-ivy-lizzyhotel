@@ -1,3 +1,4 @@
+
 <div>
   <h1 class="form-heading">{{ stepItems[activeStepIndex].label }}</h1>
 
@@ -27,7 +28,7 @@
 
               <ng-container *ngSwitchCase="'select'">
                 <select [formControlName]="field" [id]="field">
-                  <option value="">Select your Province</option>
+                  <option value="">make a selection</option>
                   <option
                     *ngFor="let option of currentFormContent[i][field].options; trackBy: trackByFn"
                     [value]="option.name"
