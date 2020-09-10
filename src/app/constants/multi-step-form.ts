@@ -9,6 +9,22 @@ const PROV_LIST = [
   { name: 'North West', code: 'nw' },
   { name: 'Mpumalang', code: 'mp' }
 ];
+const ROOM_LIST = [
+  { name: '1 room', code: '1' },
+  { name: '2 rooms', code: '2' },
+  { name: '3 rooms', code: '3' },
+  { name: '4 rooms', code: '4' },
+  { name: '5+ rooms', code: '5' },
+
+  
+];
+const OCC_LIST = [
+  { name: '1 person', code: '1' },
+  { name: '2 people', code: '1' },
+  { name: '3 people', code: '1' },
+  { name: '4 people', code: '1' },
+  { name: '5+ people', code: '1' },
+];
 
 const DATA_STEP_1 = {
   firstName: { type: 'text', validations: {}, errors: {}, placeholder: 'First Name' },
@@ -48,6 +64,20 @@ const DATA_STEP_1 = {
     validations: {},
     errors: {},
     placeholder: 'Date of Departure'
+  },
+   rooms: {
+    type: 'select',
+    options: ROOM_LIST,
+    validations: {},
+    errors: {},
+    placeholder: 'Number of Rooms Required'
+  },
+   occupants: {
+    type: 'select',
+    options: OCC_LIST,
+    validations: {},
+    errors: {},
+    placeholder: 'Number of occupants'
   }
 };
 
@@ -74,7 +104,8 @@ const DATA_STEP_2 = {
       minlength: 'Minimum length should be 3 numbers'
     },
     placeholder: 'CVV Number'
-  }
+  },
+  cardholder: { type: 'text', validations: {}, errors: {}, placeholder: ' Cardd Holders Name' }
 };
 
 const STEP_ITEMS = [

@@ -4,6 +4,8 @@
   margin: 20px 0;
   display: flex;
   justify-content: space-between;
+  box-shadow: -5px 5px -20px orangered
+ 
 }
 
 h1 {
@@ -18,4 +20,5 @@ ul {
 
 .text-bold {
   font-weight: bold;
+   text-align: center;
 }
