@@ -55,12 +55,12 @@ const YEAR_LIST = [
 ];
 
 const DATA_STEP_1 = {
-  firstName: { type: 'text', validations: {}, errors: {}, placeholder: 'First Name' },
-  lastName: { type: 'text', validations: {}, errors: {}, placeholder: 'Last Name' },
+  firstName: { type: 'text', validations: {required: true}, errors: {required :"This field cannot be blank"}, placeholder: 'First Name' },
+  lastName: { type: 'text', validations: {required:true}, errors: {required:"This field can not be Blank"}, placeholder: 'Last Name' },
   dateOfBirth: {
     type: 'date',
-    validations: {},
-    errors: {},
+    validations:{required:true},
+    errors: {required:"Please enter date of birth"},
     placeholder: 'Date of Birth'
   },
    idNo: {
