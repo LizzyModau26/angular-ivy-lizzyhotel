@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-import { STEP_ITEMS } from './constants/multi-step-form';
+import { STEP_ITEMS } from "./constants/multi-step-form";
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
-export class AppComponent implements OnInit  {
+export class AppComponent implements OnInit {
   formContent: any;
   formData: any;
   activeStepIndex: number;
@@ -20,7 +20,6 @@ export class AppComponent implements OnInit  {
   onFormSubmit(formData: any): void {
     this.formData = formData;
 
-    // post form data here
-    alert(JSON.stringify(this.formData));
+    alert("Thank you, the hotel team will get back to you.");
   }
 }

@@ -1,8 +1,45 @@
 .field-label {
   font-size: 0.875em;
 }
+input,
+select,
+textarea {
+  border: 1px solid grey;
+  height: 30px;
+  min-width: 160px;
+  max-width: 160px;
+  border-radius: 5px;
+}
+input,
+select,
+textarea :focus {
+  outline-color: #2583ca;
+  box-shadow: 5px #2583ca;
+}
+.form-heading {
+  color: #2583ca;
+}
 
 .validation-error {
   color: #cc3c3c;
-  font-size: 0.750em;
+  font-size: 0.75em;
+}
+button {
+  height: 30px;
+  width: 90px;
+  color: white;
+  background-color: royalblue;
+  box-shadow: none;
+  border-radius: 3px;
+  border: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+button:hover {
+  background-color: #2583ca;
+  letter-spacing: 0.1em;
+}
+button:disabled {
+  background-color: royalblue;
+  opacity: 0.6;
+  letter-spacing: 0;
 }
